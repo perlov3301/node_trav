@@ -1,0 +1,16 @@
+console.log("path_parentDir");
+import path from "node:path";
+import { fileURLToPath } from "node:url";
+console.log("myurl, mypath, mydir");
+const myurl = import.meta.url;
+const mypath = fileURLToPath(myurl);
+const mydir = path.dirname(mypath);
+console.log(myurl);
+console.log(mypath);
+console.log(mydir);
+const parentDir = path.resolve(mydir,"../");
+console.log(`parentDir: ${parentDir}`);
+
+const pArray = parentDir.split(path.sep);
+console.log(`parentDir split to array: ${pArray}`);
+

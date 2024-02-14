@@ -1,0 +1,19 @@
+{
+  "name": "node_trav",
+  "version": "1.0.0",
+  "description": "node course from youtube.com.trav",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index",
+    "dev": "nodemon index"
+  },
+  "author": "Brad Trav",
+  "license": "ISC",
+  "dependencies": {
+    "uuid": "^9.0.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.3"
+  }
+}
