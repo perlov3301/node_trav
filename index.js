@@ -30,14 +30,30 @@ const server = http.createServer((req,res)=>{
             res.writeHead(200, { 'Content-Type': 'text/html' });
             res.end(content);
         });
-        // res.writeHead(200, { 'Content-Type': 'text/html' });
-        // res.end(myTtext("Home"));
     } 
-    // res.write(myTtext(),()=>{ console.log("write  more to listen on 5000"); });
-    // res.end();
+    if (req.url==='/api/users') {
+        const users = [
+            { name: 'Bob Smith', age:40 },
+            { name: 'Mary Doe', age:33 },
+        ];
+        res.writeHead(200, { 'Content-Type': 'application/json' });
+        res.end(JSON.stringify(users));
+    }
+    // if(req.url==='/about') {
+    //     const myp = myPublic();
+    //     console.log(`myp dir: ${myp}`);
+    //     fs.readFile(path.join(myp, 'about.html'), (err, content)=>{
+    //         if (err) throw err;
+    //         res.writeHead(200, { 'Content-Type': 'text/html' });
+    //         res.end(content);
+    //     });
+    // } 
+    
     
 });
 // server.listen(5000, ()=>console.log('Server is running on 5000'));
 const PORT = process.env.PORT || 5000;
 server.listen(PORT, () => console.log(`Server is running on port ${PORT}`));
+ // res.writeHead(200, { 'Content-Type': 'text/html' });
+// res.end(myTtext("Home"))
 
