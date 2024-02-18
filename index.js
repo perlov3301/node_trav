@@ -73,6 +73,7 @@ const server = http.createServer((req,res)=>{
                     if (err) throw err;
                     res.writeHead(200, { 'Content-Type': 'text/html' });
                     res.end(content,'utf8');
+                    console.log(`can't access to file ${filePath} ${myTime()}`);
                 });
               } // err.code==='enoent'
               else {//some server error
